@@ -1,13 +1,28 @@
-Made by BainBan :
+# TikTokLive-Gift Bot
+This is a Python script that simulates a keypress or runs a function based on the gift received during a TikTok Live broadcast.
 
-run : pip install -r requirements.txt
-run "script" put your id from "https://www.tiktok.com/@your_id/live" WITHOUT THE "@"
-you can change the action that it does.U can ask me or search for pynput documentation 
-also you can change the action based on how many gifts they sent by adding this:
-elif event.gift.gift_type != number:
-        print(f"{event.user.uniqueId} sent \"{event.gift.extended_gift.name}\"")
-        (the action you want to do)
+# Installation
+To use this script, you'll need to clone this repository to your local machine using the following command:
 
-change the ,,number'' to how many gifts you want
-Also _Bupi_ or Palarie_Mortala are noobs
-enjoy!
+```git clone https://github.com/BainBan/TikTokLive-Gift.git```
+
+### You'll also need to install the following dependencies using either of the following methods:
+
+**Method 1: Install the dependencies using pip:**
+
+```pip install -r requirements.txt```
+**Method 2: Install the dependencies manually:**
+
+**Python 3**
+**pynput library (can be installed via pip: pip install pynput)**
+**requests library (can be installed via pip: pip install requests)**
+# Usage
+Launch the script by running python script.py in your terminal.
+Enter the broadcast ID when prompted.
+Sit back and watch the bot automatically respond to gifts during the broadcast.
+
+# Configuration
+You can customize the bot's behavior by editing the gift_dict dictionary in gift_bot.py. This dictionary maps gift IDs to the function or keypress that should be simulated when that gift is received.
+
+# Contributing
+Contributions are welcome! If you find a bug or have an idea for a new feature, feel free to submit an issue or a pull request.
