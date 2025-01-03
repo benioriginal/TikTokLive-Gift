@@ -4,7 +4,7 @@ This is a Python script that simulates a keypress or runs a function based on th
 # Installation
 To use this script, you'll need to clone this repository to your local machine using the following command:
 
-```git clone https://github.com/BainBan/TikTokLive-Gift.git```
+```git clone https://github.com/Benioriginal/TikTokLive-Gift.git```
 
 ### You'll also need to install the following dependencies using either of the following methods:
 
@@ -15,7 +15,7 @@ To use this script, you'll need to clone this repository to your local machine u
 
 **Python 3**
 **pynput library (can be installed via pip: pip install pynput)**
-**requests library (can be installed via pip: pip install requests)**
+
 # Usage
 Launch the script by running python script.py in your terminal.
 Enter the broadcast ID when prompted.
