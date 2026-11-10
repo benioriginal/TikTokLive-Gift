@@ -1,28 +1,40 @@
 # TikTokLive-Gift Bot
-This is a Python script that simulates a keypress or runs a function based on the gift received during a TikTok Live broadcast.
 
-# Installation
-To use this script, you'll need to clone this repository to your local machine using the following command:
+> **Note:** this project does **not** give free TikTok coins, gifts or followers.
+> It only reacts to gifts that viewers send on **your own** TikTok live stream.
 
-```git clone https://github.com/Benioriginal/TikTokLive-Gift.git```
+A small Python script that connects to a TikTok live stream and presses a key every time a gift is received. Streamers can use it to trigger an action in a game or app whenever a viewer sends a gift.
 
-### You'll also need to install the following dependencies using either of the following methods:
+Built in 2022 for a streamer, on top of the [TikTokLive](https://github.com/isaackogan/TikTokLive) library.
 
-**Method 1: Install the dependencies using pip:**
+## How it works
 
-```pip install -r requirements.txt```
-**Method 2: Install the dependencies manually:**
+1. The script asks for the TikTok username of the stream to watch.
+2. It connects to that live stream with `TikTokLive`.
+3. Whenever a gift arrives (for gift streaks, once the streak ends), it prints who sent what and presses the **Up arrow** key using `pynput`.
 
-**Python 3**
-**pynput library (can be installed via pip: pip install pynput)**
+## Installation
 
-# Usage
-Launch the script by running python script.py in your terminal.
-Enter the broadcast ID when prompted.
-Sit back and watch the bot automatically respond to gifts during the broadcast.
+Requires Python 3.
 
-# Configuration
-You can customize the bot's behavior by editing the gift_dict dictionary in gift_bot.py. This dictionary maps gift IDs to the function or keypress that should be simulated when that gift is received.
+```bash
+git clone https://github.com/benioriginal/TikTokLive-Gift.git
+cd TikTokLive-Gift
+pip install -r requirements.txt
+```
 
-# Contributing
-Contributions are welcome! If you find a bug or have an idea for a new feature, feel free to submit an issue or a pull request.
+## Usage
+
+```bash
+python script.py
+```
+
+Enter the TikTok username (without `@`) of a stream that is currently live. Keep the window you want to control focused, since the key press goes to the active window.
+
+## Customizing
+
+The action lives in the `on_gift` function in `script.py`. Replace the `keyboard.press(Key.up)` / `keyboard.release(Key.up)` lines with any key, or call your own function instead. You can also check `event.gift.extended_gift.name` to react differently to specific gifts.
+
+## Note on TikTokLive versions
+
+This script was written for an older version of `TikTokLive`. Newer versions of the library changed their event API, so you may need to pin an older version or update the event handlers.
